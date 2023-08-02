@@ -1,0 +1,117 @@
+$menuWidth: 325px;
+$backgroundColor: rgba(#FF2A1B, 0.85);
+
+.close-button-container{
+    z-index: 900;
+    top: 15px;
+    position: absolute;
+    right: 15px;
+    backdrop-filter: blur(2px);
+    font-size: xx-large;
+    border-radius: 100%;
+    color: white; 
+
+}
+.close-button {
+    z-index: 900;
+    top: 15px;
+    position: absolute;
+    right: 15px;
+    backdrop-filter: blur(2px);
+    font-size: xx-large;
+    border-radius: 100%;
+    color: white; 
+    cursor: pointer;
+    &:hover {
+      transition: 200ms ease-in-out;
+      transform: scale(1.4);
+    }
+}
+
+  .generalContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $menuWidth;
+    height: 100vh;
+    z-index: 900;
+    background-color: $backgroundColor; // Use the common background color variable
+    backdrop-filter: blur(2px);
+    transition: 450ms ease-in-out;
+}
+  
+
+.item-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 64px;
+}
+
+.item {
+    margin: 0.5rem;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    border-left: 1px solid transparent;
+    transition: 200ms ease-in-out;
+    cursor: pointer;
+    font-weight: bolder;
+    text-decoration: none;
+    color: white;
+    &:hover {
+        color: white;
+        background-image: linear-gradient(
+            to right,
+            #FF2A1B,
+            transparent 90%
+        );
+        border-left: 4px solid #FF2A1B;
+        border-left: 1px solid transparent;
+    }
+
+    &.active {
+        background-image: linear-gradient(
+            to right,
+            #FF2A1B,
+            transparent 90%
+        );
+    }
+}
+
+.hide-menu {
+	transform: translateX(-($menuWidth));
+}
+.disable{
+    pointer-events: none;
+}
+
+@media screen and (max-width: $menuWidth) {
+	.menu {
+		width: 100%;
+    }
+
+	.item {
+		text-align: center;
+		margin: 0.5rem 0;
+		border-radius: 0;
+		padding: 15px;
+		border: none;
+		&:hover {
+			background-color: #FF2A1B,;
+			border: none;
+			background-image: none;
+        }
+		&.active {
+			background-color: #FF2A1B,;
+			background-image: none;
+		}
+	}
+
+
+	.menu-hidden {
+		transform: translateX(-100%);
+	}
+
+}

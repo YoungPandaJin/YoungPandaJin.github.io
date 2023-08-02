@@ -1,0 +1,18 @@
+.BGMButton {
+	z-index: 900;
+	position: fixed;
+	top: 15px;
+	left: 50px;
+	font-size: xx-large;
+	cursor: pointer;
+	transition: 200ms ease-in-out;
+	border-radius: 100%;
+
+	&:hover {
+		transform: scale(1.4);
+	}
+}
+
+.hideButton{
+	opacity: 0;
+}
