@@ -15,6 +15,7 @@ export default function BGM(props: IBGMProps) {
         setIsMuted(prevIsMuted => !prevIsMuted);
         bgm.muted = !isMuted;
         bgm.muted ? bgm.pause() : bgm.play();
+
     }
 
     useEffect(() => {

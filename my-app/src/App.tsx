@@ -3,6 +3,8 @@ import { HashRouter } from "react-router-dom";
 import SiteRouter from "./Base/Router/SiteRouter";
 import "./App.css";
 
+import Loader from "./Base/Loader/Loader";
+
 export default function App() {
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -26,7 +28,7 @@ export default function App() {
   return (
     <HashRouter>
       <Suspense fallback={null}>
-        {loading ? <h1>Loading!</h1> : <SiteRouter/>}
+        {loading ? <Loader/> : <SiteRouter/>}
       </Suspense>
     </HashRouter>
   );

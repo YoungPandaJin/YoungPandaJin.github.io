@@ -1,0 +1,29 @@
+$custom-mobile-width: 540px;
+$custom-small-width: 420px;
+
+.homepage-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+@media screen and (max-width: 1024px) {
+	.homepage-container {
+		section {
+			.content-container {
+				width: 95%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $custom-mobile-width) {
+	.homepage-container {
+		.aboutme {
+			.text {
+				font-size: 1rem;
+			}
+		}
+	}
+}
