@@ -5,7 +5,6 @@ import Spacer from "./Component/Spacer/Spacer";
 import layer1 from "../../Assets/layer1.svg"
 
 export default function HomePage(){
-
     return (
         <>
             <div className="homepage-container">
@@ -13,6 +12,8 @@ export default function HomePage(){
                 <Spacer pic={layer1} type={"intro-anchor"} />
 
                 <Bio/>
+                <Spacer pic={layer1} type={""} />
+
             </div>
         </>
     )

@@ -1,5 +1,8 @@
 * {
     box-sizing: border-box;
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
 }
 
 body,
@@ -48,6 +51,51 @@ html {
 
 .lds-ring div:nth-child(3) {
     animation-delay: -0.15s;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bubbles{
+    position: relative;
+    display: flex;
+    z-index: 90;
+
+}
+
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 100rem;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+    0 0 50px #4fc3dc,
+    0 0 100px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+.bubbles span:nth-child(even){
+    background: #FF2A1B;
+    box-shadow: 0 0 0 10px #ff2d7544,
+    0 0 50px #FF2A1B,
+    0 0 100px #FF2A1B;
+}
+
+@keyframes animate{
+    0% {
+        transform: translateY(100vh) scale(0);
+    }
+    
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
 }
 
 @keyframes lds-ring {

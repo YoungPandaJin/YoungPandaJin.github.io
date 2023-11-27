@@ -6,6 +6,7 @@ $custom-small-width: 420px;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+	z-index: 100;
 }
 
 @media screen and (max-width: 1024px) {
