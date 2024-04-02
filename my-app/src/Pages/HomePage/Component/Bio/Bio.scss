@@ -1,11 +1,9 @@
-/* General styles for containers */
 .Container {
     padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    background-color: #222;
     color: #fff;
 }
 
@@ -14,12 +12,11 @@
 }
 
 .Title {
-    font-size: 2.5rem;
+    font-size: 2rem; 
     text-align: center;
     margin-bottom: 1rem;
 }
 
-/* Display the picture and text side by side */
 .PicTextContainer {
     display: flex;
     align-items: center;
@@ -30,31 +27,34 @@
     width: 20rem;
     margin: 0 2rem 0 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    margin-left: auto; /* Move the text to the right of the container */
-
+    margin-left: auto;
+    animation: spin 20s ease-in-out infinite;
 }
 
 .pic {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    
+    animation: bob 1s ease-in-out infinite;
 }
 
-.Text {
-    text-align: left; /* Adjust text alignment to the left */
+.TextContainer {
+    height: 100%;
+    text-align: center; 
     font-size: 1.6rem;
-    background-color: #333;
     color: #fff;
     padding: 1rem;
     border-radius: 5px;
-    margin-left: auto; /* Move the text to the right of the container */
+    margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Media query for different screen sizes */
+
 @media screen and (max-width: 768px) {
-    /* Stack the picture and text on top of each other for smaller screens */
     .PicTextContainer {
         flex-direction: column;
     }
@@ -62,5 +62,23 @@
     .PicContainer {
         width: 100%;
         margin: 1rem 0;
+    }
+}
+
+@keyframes spin {
+    0%, 100% { 
+        transform: rotateY(0deg);
+    }
+    50% { 
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes bob {
+    0%, 100% { 
+        transform: translateY(0px);
+    }
+    50% { 
+        transform: translateY(-10px);
     }
 }
