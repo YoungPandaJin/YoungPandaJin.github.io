@@ -8,24 +8,24 @@ const buttons = [
     { text: "Email", icon: <AiOutlineMail />, url: "mailto: choij4@rose-hulman.edu" },
 ]
 
-const cards = [
-    {
-        style: {
+// const cards = [
+//     {
+//         style: {
 
-        }
-    },
-    {
-        style: {
+//         }
+//     },
+//     {
+//         style: {
             
-        }
-    },
-    {
-        style: {
+//         }
+//     },
+//     {
+//         style: {
             
-        }
-    }
+//         }
+//     }
 
-]
+// ]
 
 export default function Intro(){
     
