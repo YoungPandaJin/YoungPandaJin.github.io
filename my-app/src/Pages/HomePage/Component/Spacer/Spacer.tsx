@@ -1,18 +1,25 @@
 import "./Spacer.scss"
 export interface ISpacerProps {
-    pic: string;
+    color: string;
     type: string;
 }
 
-
 export default function Spacer(props: ISpacerProps){
-    
+    const styles = {
+        spacer: {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '75%',
+            height: '5px',
+            minWidth: '150px',
+            backgroundColor: props.color,
+            margin: '0 auto',
+            marginBottom: props.type === 'noMargin' ? '0' : '10vh',
+        },
+    };
+      
     return (
-        <>
-            <div className={`spacer ${props.type}`}>
-                <img src={props.pic} alt="" />
-            </div>
-        </>
-
+            <div style={styles.spacer}/>
     )
 }

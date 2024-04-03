@@ -10,9 +10,9 @@ export default function Bio(){
                     <h1>About Me</h1>
                 </div>
                 <div className="PicTextContainer">
-                    <div className="PicContainer">
+                    {/* <div className="PicContainer">
                         <img className={'pic'} src={professionalPFP} alt="PandaJin's pfp" />
-                    </div>
+                    </div> */}
                     <div className="TextContainer">
                         <h2>Hi, I'm Jinyoung Choi.</h2>
                         <p>
