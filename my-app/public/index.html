@@ -21,23 +21,7 @@
   <body>
     <noscript>You have entered the backrooms of the javascript. Please enable javascript to be able to leave</noscript>
     <div class = "container">
-      <div class="bubbles" id="bubbles-container"></div>
       <div id="root"></div>
     </div>
   </body>
-  <script>
-    // Number of spans you want to create
-    const numberOfSpans = 60;
-  
-    // Reference to the container
-    const bubblesContainer = document.getElementById('bubbles-container');
-  
-    // Create and append spans dynamically
-    for (let i = 1; i <= numberOfSpans; i++) {
-      const span = document.createElement('span');
-      const randomValue = Math.floor(Math.random() * 30) + 1; // Generates a random value between 1 and 30
-      span.style.setProperty('--i', randomValue);
-      bubblesContainer.appendChild(span);
-    }
-  </script>
 </html>

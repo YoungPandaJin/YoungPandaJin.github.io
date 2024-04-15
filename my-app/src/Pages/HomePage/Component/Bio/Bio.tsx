@@ -4,8 +4,8 @@ import professionalPFP from '../../../../Assets/professionalPFP.JPG';
 export default function Bio(){
     
     return (
-        <div className="Container">
-            <div className="Bio">
+        <div className="Bio">
+            <div className="Container">
                 <div className="Title">
                     <h1>About Me</h1>
                 </div>

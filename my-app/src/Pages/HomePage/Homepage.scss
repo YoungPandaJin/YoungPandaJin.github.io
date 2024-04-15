@@ -8,6 +8,68 @@ $custom-small-width: 420px;
 	flex-direction: column;
 	z-index: 100;
 }
+.bubbles {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	z-index: 80;
+}
+
+.bubbles span {
+	position: relative;
+	width: 40px;
+	height: 30px;
+	background: #4fc3dc;
+	margin: 0 4px;
+	border-radius: 100rem;
+	box-shadow: 0 0 0 10px #4fc3dc44,
+	0 0 50px #4fc3dc,
+	0 0 100px #4fc3dc;
+	animation: animate 15s linear infinite;
+	animation-duration: calc(125s / var(--i));
+}
+
+.bubbles span:nth-child(even) {
+	background: #FF2A1B;
+	box-shadow: 0 0 0 10px #ff2d7544,
+	0 0 50px #FF2A1B,
+	0 0 100px #FF2A1B;
+}
+
+.button-container {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-bottom: auto;
+	font-size: 1.2rem;
+
+	button {
+		background-color: white; 
+		color: black;
+		padding: 10px 20px;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		margin: 0 5vh 0 5vh;
+
+		&:hover {
+			background-color: #FF2A1B; /* Change the background color on hover */
+		}
+	}
+}
+
+@keyframes animate {
+	0% {
+		transform: translateY(100vh) scale(0);
+	}
+	
+	100% {
+		transform: translateY(-100vh) scale(1);
+	}
+}
 
 @media screen and (max-width: 1024px) {
 	.homepage-container {
