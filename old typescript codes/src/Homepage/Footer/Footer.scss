@@ -1,0 +1,44 @@
+.footer {
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+
+  p {
+    margin: 5px 0;
+  }
+
+  .footer-links {
+    margin: 10px 0;
+
+    a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      svg {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .footer-contact {
+    margin-top: 10px;
+
+    p {
+      margin: 5px 0;
+      display: inline-flex;
+      align-items: center;
+
+      svg {
+        margin-right: 5px;
+      }
+    }
+  }
+}

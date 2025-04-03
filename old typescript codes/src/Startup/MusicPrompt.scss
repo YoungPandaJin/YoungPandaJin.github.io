@@ -1,0 +1,77 @@
+.MusicPrompt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: opacity 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  opacity: 1;
+}
+
+.MusicPrompt.hidden {
+  opacity: 0;
+  background-color: black;
+}
+
+.MusicPrompt-message {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.MusicPrompt h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.MusicPrompt p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.MusicPrompt-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.accept-button, .decline-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.accept-button {
+  background: #4caf50;
+  color: white;
+}
+
+.decline-button {
+  background: #f44336;
+  color: white;
+}
+
+.accept-button:hover, .decline-button:hover {
+  transform: scale(1.05);
+}
+
+.accept-button:active, .decline-button:active {
+  transform: scale(0.95);
+}
+
+.content {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.content.visible {
+  opacity: 1;
+}

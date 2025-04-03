@@ -1,0 +1,144 @@
+@import './StarBackground.scss';
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+}
+
+.hero-image {
+  width: 200px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  transition: transform 0.3s, box-shadow 0.3s;
+  z-index: 2;
+  animation: fadeIn 2s ease-in-out;
+}
+  
+.hero-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+  
+.hero-name {
+  font-size: 2em;
+  margin: 10px 0;
+  z-index: 2;
+  color: white;
+  animation: fadeIn 2s ease-in-out;
+}
+  
+.hero-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+  
+.hero-button {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  width: 150px;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  font-size: 16px;
+  animation: fadeIn 2s ease-in-out;
+}
+  
+.hero-button:hover {
+  background-color: #cc0000;
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+  
+.hero-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.5);
+}
+  
+.hero-button:active {
+  background-color: #990000;
+  transform: scale(0.95);
+}
+  
+.hero-icon {
+  font-size: 1.2em;
+  z-index: 2;
+}
+  
+.tarot-cards {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 10px;
+  z-index: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    padding: 20px;
+    height: auto;
+  }
+
+  .hero-image {
+    width: 150px;
+  }
+
+  .hero-name {
+    font-size: 1.5em;
+  }
+
+  .hero-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .tarot-cards {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-image {
+    width: 120px;
+  }
+
+  .hero-name {
+    font-size: 1.2em;
+  }
+
+  .hero-button {
+    padding: 8px;
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .tarot-cards {
+    top: 55%;
+    gap: 3px;
+  }
+}
