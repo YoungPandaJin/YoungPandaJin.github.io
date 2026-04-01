@@ -1,25 +1,49 @@
 import React from 'react';
 import './AboutMe.scss';
 
+interface Skill {
+  name: string;
+  icon: string;
+}
+
+// Icons from https://devicon.dev — to add a new skill, find the icon name on that site
+const skills: Skill[] = [
+  { name: 'Python', icon: 'devicon-python-plain' },
+  { name: 'TypeScript', icon: 'devicon-typescript-plain' },
+  { name: 'JavaScript', icon: 'devicon-javascript-plain' },
+  { name: 'React', icon: 'devicon-react-original' },
+  { name: 'SCSS', icon: 'devicon-sass-original' },
+  { name: 'Git', icon: 'devicon-git-plain' },
+  { name: 'Godot', icon: 'devicon-godot-plain' },
+];
+
 const AboutMe: React.FC = () => {
   return (
     <div className="about-me">
       <div className="about-me-content">
         <h2 className="about-me-title">About Me</h2>
         <p className="about-me-text">
-          Hi! I'm <em>Jinyoung Choi</em>, also known as <em>PandaJin</em>. I'm a passionate developer with a deep love for coding and technology. 
-          I'm constantly exploring new programming languages and staying up-to-date with the latest tech trends.
+          Hi! I'm <em>Jin</em> — pronounced like the alcohol Gin, but with a J.
         </p>
 
         <p className="about-me-text">
-          Currently, I'm learning <strong>Godot/GDScript</strong>, <strong>PyTorch</strong>, and <strong>AWS</strong>.
-          I'm working on an AI "Friend" project using AWS and PyTorch, and in my spare time, I'm developing a game in Godot. 
-          Next on my list is learning <strong>Docker</strong>. I'm always seeking opportunities to grow and expand my skills.
+          I'm a Software Engineer at <strong>FloQast</strong> and a <strong>Rose-Hulman</strong> graduate.
         </p>
 
         <p className="about-me-text">
-          In my free time, you can find me diving into hobbies like gaming and binge-watching shows. I also enjoy working on game development projects and continually expanding my knowledge by exploring new programming languages and tools.
+          Outside of work, I'm building side projects ranging from AI experiments to game development in Godot.
+          Currently exploring ways to integrate AI into my daily workflow to speed up processes and stay ahead of the curve.
         </p>
+
+        <h3 className="about-me-subtitle">Tech I Work With</h3>
+        <div className="skills-grid">
+          {skills.map((skill) => (
+            <div key={skill.name} className="skill-item">
+              <i className={`${skill.icon} colored`}></i>
+              <span>{skill.name}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
