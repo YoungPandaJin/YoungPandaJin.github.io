@@ -1,13 +1,9 @@
 import React from 'react';
 import './AboutMe.scss';
-// import TarotCard from '../TarotCard';
 
 const AboutMe: React.FC = () => {
   return (
     <div className="about-me">
-      {/* <div className="about-me-tarot-cards">
-        <TarotCard frontImage="/tarot/front1.jpg" backImage="/tarot/back.jpg" />
-      </div> */}
       <div className="about-me-content">
         <h2 className="about-me-title">About Me</h2>
         <p className="about-me-text">
@@ -25,9 +21,6 @@ const AboutMe: React.FC = () => {
           In my free time, you can find me diving into hobbies like gaming and binge-watching shows. I also enjoy working on game development projects and continually expanding my knowledge by exploring new programming languages and tools.
         </p>
       </div>
-      {/* <div className="about-me-tarot-cards">
-        <TarotCard frontImage="/tarot/front2.jpg" backImage="/tarot/back.jpg" />
-      </div> */}
     </div>
   );
 };

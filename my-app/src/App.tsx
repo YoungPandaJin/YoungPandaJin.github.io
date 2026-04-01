@@ -44,12 +44,8 @@ function App() {
       audioRef.current.volume = volume;
     }
     if (musicEnabled && audioRef.current) {
-      console.log('Playing audio');
-      audioRef.current.play().catch(error => {
-        console.error('Error playing audio:', error);
-      });
+      audioRef.current.play().catch(() => {});
     } else if (audioRef.current) {
-      console.log('Pausing audio');
       audioRef.current.pause();
     }
   }, [musicEnabled, volume]);
@@ -69,7 +65,7 @@ function App() {
               onClick={() => setMusicEnabled(!musicEnabled)}
               width="32"
               height="32"
-              style={{ cursor: 'pointer', color: 'white' }} // Changed color to white
+              style={{ cursor: 'pointer', color: 'white' }}
             />
             <input
               type="range"

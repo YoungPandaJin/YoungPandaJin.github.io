@@ -82,14 +82,8 @@
   z-index: 0;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+@import '../../animations';
+
 @media (max-width: 768px) {
   .hero {
     padding: 20px;

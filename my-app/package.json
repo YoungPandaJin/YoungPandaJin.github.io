@@ -6,7 +6,7 @@
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
-    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@fortawesome/react-fontawesome": "^0.2.6",
     "@iconify-icons/tabler": "^1.2.95",
     "@iconify-json/tabler": "^1.2.0",
     "@iconify/react": "^5.0.2",

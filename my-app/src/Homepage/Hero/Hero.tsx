@@ -3,17 +3,11 @@ import './Hero.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelopeSquare, faFileDownload } from '@fortawesome/free-solid-svg-icons';
-import TarotCard from '../TarotCard';
 import resume from '../../Assets/Resume.pdf';
 
 const Hero: React.FC = () => {
   return (
     <div className="hero">
-      <div className="tarot-cards">
-        {/* <TarotCard frontImage="/tarot/front1.jpg" backImage="/tarot/back.jpg" />
-        <TarotCard frontImage="/tarot/front2.jpg" backImage="/tarot/back.jpg" />
-        <TarotCard frontImage="/tarot/front3.jpg" backImage="/tarot/back.jpg" /> */}
-      </div>
       <img src="https://avatars.githubusercontent.com/u/122561920?v=4" alt="PandaJin" className="hero-image" />
       <h1 className="hero-name">Jinyoung Choi</h1>
       <div className="hero-links">

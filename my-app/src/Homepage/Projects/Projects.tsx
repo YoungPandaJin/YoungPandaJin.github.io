@@ -4,28 +4,16 @@ import projects, { Projects } from './ProjectsDatas';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-
-interface Project {
-  title: string;
-  description: string[];
-  images: string[];
-  links?: { label: string; url: string }[];
-  technologies?: string[];
-}
-
 const ProjectSection: React.FC = () => {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [animationClass, setAnimationClass] = useState('');
   const [isFlipped, setIsFlipped] = useState(false);
-
 
   const handleNextProject = () => {
     setIsFlipped(true);
     setAnimationClass('fade-out');
     setTimeout(() => {
       setCurrentProjectIndex((prevIndex) => (prevIndex + 1) % projects.length);
-      setSelectedImageIndex((prevIndex) => (prevIndex + 1) % projects.length);
       setAnimationClass('fade-in');
       setIsFlipped(false);
     }, 500);
@@ -36,7 +24,6 @@ const ProjectSection: React.FC = () => {
     setAnimationClass('fade-out');
     setTimeout(() => {
       setCurrentProjectIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
-      setSelectedImageIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
       setAnimationClass('fade-in');
       setIsFlipped(false);
     }, 500);
@@ -47,7 +34,6 @@ const ProjectSection: React.FC = () => {
     setAnimationClass('fade-out');
     setTimeout(() => {
       setCurrentProjectIndex(index);
-      setSelectedImageIndex(index);
       setAnimationClass('fade-in');
       setIsFlipped(false);
     }, 500);
@@ -108,7 +94,7 @@ const ProjectSection: React.FC = () => {
               key={index}
               src={image}
               alt={`Thumbnail ${index + 1}`}
-              className={index === selectedImageIndex ? 'selected' : ''}
+              className={index === currentProjectIndex ? 'selected' : ''}
               onClick={() => handleImageClick(index)}
             />
           ))}
