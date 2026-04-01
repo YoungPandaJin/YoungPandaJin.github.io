@@ -1,16 +1,25 @@
+@import '../variables';
+
 .homepage-header {
-    position: relative;
-    z-index: 10;
-  }
-  
-  .homepage-header a {
-    pointer-events: auto;
-  }
-  #about-me-section {
-    margin-bottom: 20px;
-    padding: 125px;
+  position: relative;
+  z-index: 10;
+}
+
+.homepage-header a {
+  pointer-events: auto;
+}
+
+.tab-content {
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity $animation-duration ease-in-out;
+
+  &.fade-out {
+    opacity: 0;
   }
 
-  #project-section {
-    padding: 50px;
+  &.fade-in {
+    opacity: 1;
   }
+}
