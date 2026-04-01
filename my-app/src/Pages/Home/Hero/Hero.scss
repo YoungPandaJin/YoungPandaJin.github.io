@@ -1,5 +1,5 @@
 @import './StarBackground.scss';
-@import '../../variables';
+@import '../../../styles/variables';
 
 .hero {
     display: flex;
@@ -90,7 +90,7 @@
   z-index: 0;
 }
 
-@import '../../animations';
+@import '../../../styles/animations';
 
 @media (max-width: 768px) {
   .hero {

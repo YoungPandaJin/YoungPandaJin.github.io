@@ -3,7 +3,7 @@ import './Hero.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelopeSquare, faFileDownload } from '@fortawesome/free-solid-svg-icons';
-import resume from '../../Assets/Resume.pdf';
+import resume from '../../../Assets/Resume.pdf';
 
 const Hero: React.FC = () => {
   const downloadResume = () => {

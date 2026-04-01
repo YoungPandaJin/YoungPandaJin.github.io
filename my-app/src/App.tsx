@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Icon } from '@iconify/react';
 import musicIcon from '@iconify-icons/tabler/music';
 import musicOffIcon from '@iconify-icons/tabler/music-off';
-import MusicPrompt from './Startup/MusicPrompt';
-import Homepage from './Homepage/Homepage';
+import MusicPrompt from './Layout/MusicPrompt';
+import Pages from './Pages/Pages';
 import BGM from './Assets/WispX(ToT).mp3';
-import { ANIMATION_DURATION, DEFAULT_VOLUME } from './constants';
+import { ANIMATION_DURATION, DEFAULT_VOLUME } from './shared/constants';
 import './App.scss';
 
 function App() {
@@ -61,7 +61,7 @@ function App() {
       ) : (
         <>
           <header className="App-header">
-            <Homepage />
+            <Pages />
           </header>
           <div className="music-controls">
             <Icon

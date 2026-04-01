@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx react-scripts:*)"
+      "Bash(npx react-scripts:*)",
+      "Bash(mv _variables.scss styles/)",
+      "Bash(mv _animations.scss styles/)",
+      "Bash(mv ErrorBoundary.tsx shared/)",
+      "Bash(mv constants.ts shared/)",
+      "Bash(mv PageSetup/MenuTab.tsx Layout/)"
     ]
   }
 }

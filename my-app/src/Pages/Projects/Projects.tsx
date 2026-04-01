@@ -3,7 +3,7 @@ import './Projects.scss';
 import projects, { Projects } from './ProjectsDatas';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { ANIMATION_DURATION } from '../../constants';
+import { ANIMATION_DURATION } from '../../shared/constants';
 
 const ProjectSection: React.FC = () => {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);

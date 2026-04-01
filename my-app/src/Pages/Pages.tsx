@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Hero from './Hero/Hero';
-import AboutMe from './AboutMe/AboutMe';
-import MenuTab, { Tab } from '../PageSetup/MenuTab';
+import Hero from './Home/Hero/Hero';
+import AboutMe from './Home/AboutMe/AboutMe';
+import MenuTab, { Tab } from '../Layout/MenuTab';
 import ProjectSection from './Projects/Projects';
 import Experience from './Experience/Experience';
-import Footer from './Footer/Footer';
-import { ANIMATION_DURATION } from '../constants';
-import './Homepage.scss';
+import Footer from './Home/Footer/Footer';
+import { ANIMATION_DURATION } from '../shared/constants';
+import './Pages.scss';
 
 const stars = Array.from({ length: 100 }, (_, index) => (
   <div key={index} className="star" style={{ top: `${Math.random() * 100}%`, left: `${Math.random() * 100}%` }}></div>
@@ -16,7 +16,7 @@ const shootingStar = (
   <div className="shooting-star" style={{ top: `${Math.random() * 50}%`, left: `${Math.random() * 50}%` }}></div>
 );
 
-const Homepage: React.FC = () => {
+const Pages: React.FC = () => {
   const [activeTab, setActiveTab] = useState<Tab>('home');
   const [isFading, setIsFading] = useState(false);
 
@@ -64,4 +64,4 @@ const Homepage: React.FC = () => {
   );
 };
 
-export default Homepage;
+export default Pages;

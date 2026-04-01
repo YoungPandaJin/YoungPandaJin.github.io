@@ -1,5 +1,5 @@
-@import '../Hero/StarBackground.scss';
-@import '../../variables';
+@import '../Home/Hero/StarBackground.scss';
+@import '../../styles/variables';
 
 .project {
   width: 80vw;
@@ -226,7 +226,7 @@
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-@import '../../animations';
+@import '../../styles/animations';
 
 .image-thumbnails {
   justify-content: center;
