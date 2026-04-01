@@ -6,37 +6,28 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 
 const ProjectSection: React.FC = () => {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
-  const [animationClass, setAnimationClass] = useState('');
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [isFading, setIsFading] = useState(false);
+
+  const switchProject = (getNewIndex: () => number) => {
+    if (isFading) return;
+    setIsFading(true);
+    setTimeout(() => {
+      setCurrentProjectIndex(getNewIndex());
+      setIsFading(false);
+    }, 500);
+  };
 
   const handleNextProject = () => {
-    setIsFlipped(true);
-    setAnimationClass('fade-out');
-    setTimeout(() => {
-      setCurrentProjectIndex((prevIndex) => (prevIndex + 1) % projects.length);
-      setAnimationClass('fade-in');
-      setIsFlipped(false);
-    }, 500);
+    switchProject(() => (currentProjectIndex + 1) % projects.length);
   };
 
   const handlePrevProject = () => {
-    setIsFlipped(true);
-    setAnimationClass('fade-out');
-    setTimeout(() => {
-      setCurrentProjectIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
-      setAnimationClass('fade-in');
-      setIsFlipped(false);
-    }, 500);
+    switchProject(() => (currentProjectIndex - 1 + projects.length) % projects.length);
   };
 
   const handleImageClick = (index: number) => {
-    setIsFlipped(true);
-    setAnimationClass('fade-out');
-    setTimeout(() => {
-      setCurrentProjectIndex(index);
-      setAnimationClass('fade-in');
-      setIsFlipped(false);
-    }, 500);
+    if (index === currentProjectIndex) return;
+    switchProject(() => index);
   };
 
   const currentProject = projects[currentProjectIndex];
@@ -46,9 +37,9 @@ const ProjectSection: React.FC = () => {
     <div className="project">
       <h2 className="project-title">Project</h2>
       <div className="project-section">
-        <div className="project box">
+        <div className="project-box">
           <div className="project-content">
-            <div className={`project-info ${animationClass}`}>
+            <div className={`project-info ${isFading ? 'fade-out' : 'fade-in'}`}>
               <h2 className="info-title">{currentProject.title}</h2>
               {currentProject.description.map((desc, index) => (
                 <p key={index} className="compact-description">{desc}</p>
@@ -76,28 +67,30 @@ const ProjectSection: React.FC = () => {
                 )}
               </div>
             </div>
-            <div className="project-carousel">
-              <button className="carousel-button prev-button" onClick={handlePrevProject}>
-                <FontAwesomeIcon icon={faChevronLeft} />
-              </button>
-              <div className={`flip-card ${isFlipped ? 'flip' : ''}`}>
+            <div className={`project-image-side ${isFading ? 'fade-out' : ''}`}>
+              <div className="flip-card">
                 <img src={currentProject.images[0]} alt={`Project ${currentProjectIndex + 1}`} />
-              </div> 
-              <button className="carousel-button next-button" onClick={handleNextProject}>
-                <FontAwesomeIcon icon={faChevronRight} />
-              </button>
+              </div>
             </div>
           </div>
-          <div className="image-thumbnails">
-          {projectsImages.map((image, index) => (
-            <img
-              key={index}
-              src={image}
-              alt={`Thumbnail ${index + 1}`}
-              className={index === currentProjectIndex ? 'selected' : ''}
-              onClick={() => handleImageClick(index)}
-            />
-          ))}
+          <div className="project-nav">
+            <button className="carousel-button" onClick={handlePrevProject}>
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </button>
+            <div className="image-thumbnails">
+              {projectsImages.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Thumbnail ${index + 1}`}
+                  className={index === currentProjectIndex ? 'selected' : ''}
+                  onClick={() => handleImageClick(index)}
+                />
+              ))}
+            </div>
+            <button className="carousel-button" onClick={handleNextProject}>
+              <FontAwesomeIcon icon={faChevronRight} />
+            </button>
           </div>
         </div>
       </div>

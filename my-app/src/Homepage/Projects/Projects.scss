@@ -29,7 +29,7 @@
   height: 100%;
 }
 
-.box {
+.project-box {
   background-color: transparent;
   border: 2px solid white;
   padding: 40px;
@@ -37,35 +37,62 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 70vw;
   height: 70vh;
+  min-height: 70vh;
+  max-height: 70vh;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .project-content {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  perspective: 1000px;
-  max-width: 1000px;
+  gap: 2vw;
   height: 100%;
   width: 100%;
   flex-grow: 1;
   overflow: hidden;
   padding: 2vw;
-  padding-bottom: 4vh;
+  padding-bottom: 2vh;
 }
 
 .project-info {
-  flex-grow: 1;
+  flex: 1 1 50%;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+
+  &.fade-out {
+    animation: none;
+    opacity: 0;
+  }
+
+  &.fade-in {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+.project-image-side {
+  flex: 1 1 50%;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
   align-items: center;
-  text-align: center;
-  width: 100%;
-  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+
+  &.fade-out {
+    animation: none;
+    opacity: 0;
+  }
 }
 
 .project-bottom {
@@ -92,63 +119,41 @@
   color: white;
 }
 
-.project-carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-  perspective: 1000px;
-  height: 100%;
-  width: 100%;
-  position: relative;
-}
-
 .flip-card {
-  position: relative;
-  max-height: 1000px;
-  width: auto;
-  height: auto;
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.flip-card.flip {
-  transform: rotateY(360deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
 }
 
 .flip-card img {
-  width: 100%; 
-  height: 100%;
-  max-width: none; 
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.project-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0;
 }
 
 .carousel-button {
-  
   background: none;
   color: white;
   font-size: 24px;
   cursor: pointer;
   padding: 10px;
   border: none;
-}
-    
-.prev-button {
-  left: -100px;
-}
+  transition: transform 0.2s;
 
-.next-button {
-  right: -70px;
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 .project-technologies {
   margin-top: 10px;
@@ -206,6 +211,7 @@
   color: white;
   width: 150px;
   padding: 12px 24px;
+  margin: 10px;
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
@@ -224,13 +230,13 @@
   justify-content: center;
   display: flex;
   gap: 10px;
-  margin-top: 10px;
 
   img {
     width: 50px;
     height: 50px;
     cursor: pointer;
     border: 2px solid transparent;
+    border-radius: 4px;
 
     &.selected {
       border-color: red;
@@ -238,15 +244,8 @@
   }
 }
 
-.image-thumbnails img {
-  margin-bottom: 10px;
-}
 .compact-description {
   margin: 0.5em 0;
-}
-
-.project-link-button {
-  margin: 10px;
 }
 
 @media (max-width: 768px) {
@@ -260,10 +259,11 @@
     width: 100%;
   }
 
-  .box {
-    width: 100vw;
+  .project-box {
+    width: 95vw;
     height: auto;
-    flex-direction: column;
+    min-height: auto;
+    max-height: none;
     padding: 15px;
   }
 
@@ -271,21 +271,18 @@
     flex-direction: column;
     width: 100%;
     padding: 0;
+    gap: 10px;
   }
 
-  .project-carousel {
-    max-height: 50vh;
-    max-width: 90vw;
-    height: 50vh;
-    width: 90vw;
+  .project-info {
+    align-items: center;
+    text-align: center;
   }
 
-  .flip-card img {
-    width: 100%;
-    height: auto;
+  .project-image-side {
+    max-height: 40vh;
   }
 
-  .project-info,
   .project-bottom {
     width: 100%;
     align-items: center;
