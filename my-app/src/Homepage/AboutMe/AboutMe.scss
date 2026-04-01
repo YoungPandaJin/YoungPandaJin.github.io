@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .about-me {
   display: flex;
   justify-content: center;
@@ -7,7 +9,7 @@
 
 .about-me-title {
   font-size: 2em;
-  color: #eeeeee;
+  color: $color-secondary;
   margin-bottom: 20px;
   text-align: center;
   &:hover {
@@ -17,7 +19,7 @@
 
 .about-me-subtitle {
   font-size: 1.4em;
-  color: #eeeeee;
+  color: $color-secondary;
   margin-top: 30px;
   margin-bottom: 15px;
   text-align: center;
@@ -25,17 +27,17 @@
 
 .about-me-text {
   font-size: 1.2em;
-  color: #ffffff;
+  color: $color-primary;
   line-height: 1.6;
   margin-bottom: 10px;
 }
 
 .about-me-text strong {
-  color: #f13939;
+  color: $color-accent;
 }
 
 .about-me-text em {
-  color: #f13939;
+  color: $color-accent;
 }
 
 .about-me-content {
@@ -68,7 +70,7 @@
 
   span {
     font-size: 0.85em;
-    color: #cccccc;
+    color: $color-muted;
   }
 }
 

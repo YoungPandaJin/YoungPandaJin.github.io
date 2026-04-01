@@ -1,4 +1,5 @@
 @import './StarBackground.scss';
+@import '../../variables';
 
 .hero {
     display: flex;
@@ -28,22 +29,28 @@
   font-size: 2em;
   margin: 10px 0;
   z-index: 2;
-  color: white;
+  color: $color-primary;
   animation: fadeIn 2s ease-in-out;
 }
-  
+
 .hero-links {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
-  
+
 .hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   background: none;
-  border: 2px solid white;
-  color: white;
+  border: 2px solid $color-primary;
+  color: $color-primary;
   width: 150px;
-  padding: 12px 24px;
+  height: 50px;
+  padding: 0;
+  box-sizing: border-box;
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
@@ -52,7 +59,7 @@
 }
   
 .hero-button:hover {
-  background-color: #cc0000;
+  background-color: $color-accent-hover;
   transform: scale(1.05);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
@@ -63,12 +70,13 @@
 }
   
 .hero-button:active {
-  background-color: #990000;
+  background-color: $color-accent-active;
   transform: scale(0.95);
 }
   
 .hero-icon {
   font-size: 1.2em;
+  margin-right: 8px;
   z-index: 2;
 }
   

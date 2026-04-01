@@ -1,3 +1,6 @@
+import Project1 from './Project1/Project.png';
+import Project2 from './Project2/PandaJin.png';
+
 export interface Projects {
   title: string;
   description: string[];
@@ -15,9 +18,7 @@ const projects: Projects[] = [
       "I used TypeScript to write the code and SCSS to style the website.",
       "This is where I am going to update my projects. Currently its done for now, but I might add more later"
     ],
-    images: [
-      require('./Project1/Project.png'),
-    ],
+    images: [Project1],
     links: [
       { label: "GitHub", url: "https://github.com/YoungPandaJin" },
       { label: "Live Demo", url: "https://github.com/YoungPandaJin" },
@@ -31,9 +32,7 @@ const projects: Projects[] = [
       "I used python to write the code andused speech recognition to get the audio from the user.",
       "Then I get the response by using a dataset from huggingface and by converting the text to speech I can output it",
     ],
-    images: [
-      require('./Project2/PandaJin.png'),
-    ],
+    images: [Project2],
     links: [
       { label: "GitHub", url: "https://github.com/YoungPandaJin" },
       { label: "Live Demo", url: "https://github.com/YoungPandaJin" },

@@ -1,4 +1,5 @@
 @import '../Hero/StarBackground.scss';
+@import '../../variables';
 
 .project {
   width: 80vw;
@@ -14,7 +15,7 @@
   font-size: 3vw;
   margin-bottom: 10px;
   text-align: center;
-  color: #eeeeee;
+  color: $color-secondary;
   width: 25%;
   margin: 0 auto;
 }
@@ -65,15 +66,13 @@
   align-items: center;
   text-align: left;
   opacity: 1;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity $animation-duration ease-in-out;
 
   &.fade-out {
-    animation: none;
     opacity: 0;
   }
 
   &.fade-in {
-    animation: none;
     opacity: 1;
   }
 }
@@ -87,10 +86,9 @@
   justify-content: center;
   overflow: hidden;
   opacity: 1;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity $animation-duration ease-in-out;
 
   &.fade-out {
-    animation: none;
     opacity: 0;
   }
 }
@@ -113,12 +111,12 @@
 
 .project h2 {
   margin-bottom: 10px;
-  color: white;
+  color: $color-primary;
 }
 
 .project p {
   margin-bottom: 20px;
-  color: white;
+  color: $color-primary;
 }
 
 .flip-card {
@@ -146,7 +144,7 @@
 
 .carousel-button {
   background: none;
-  color: white;
+  color: $color-primary;
   font-size: 24px;
   cursor: pointer;
   padding: 10px;
@@ -164,7 +162,7 @@
 .technology-highlight {
   display: inline-block;
   background-color: #f0f0f0;
-  color: #333;
+  color: $color-text-dark;
   padding: 5px 10px;
   margin: 5px;
   border-radius: 20px;
@@ -199,8 +197,8 @@
 }
 
 .technology-highlight:hover {
-  background-color: #333;
-  color: white;
+  background-color: $color-text-dark;
+  color: $color-primary;
 }
 
 .project-links {
@@ -208,9 +206,11 @@
 }
 
 .project-link-button {
+  display: inline-block;
+  text-decoration: none;
   background: none;
-  border: 2px solid white;
-  color: white;
+  border: 2px solid $color-primary;
+  color: $color-primary;
   width: 150px;
   padding: 12px 24px;
   margin: 10px;
@@ -221,7 +221,7 @@
 }
 
 .project-link-button:hover {
-  background-color: #cc0000;
+  background-color: $color-accent-hover;
   transform: scale(1.05);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }

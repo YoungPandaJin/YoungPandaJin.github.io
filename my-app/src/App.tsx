@@ -5,12 +5,13 @@ import musicOffIcon from '@iconify-icons/tabler/music-off';
 import MusicPrompt from './Startup/MusicPrompt';
 import Homepage from './Homepage/Homepage';
 import BGM from './Assets/WispX(ToT).mp3';
+import { ANIMATION_DURATION, DEFAULT_VOLUME } from './constants';
 import './App.scss';
 
 function App() {
   const [musicPrompt, setMusicPrompt] = useState(true);
   const [musicEnabled, setMusicEnabled] = useState(false);
-  const [volume, setVolume] = useState(0.05);
+  const [volume, setVolume] = useState(DEFAULT_VOLUME);
   const [animationClass, setAnimationClass] = useState('');
   const audioRef = useRef<HTMLAudioElement>(null);
 
@@ -20,7 +21,7 @@ function App() {
       setMusicEnabled(true);
       setMusicPrompt(false);
       setAnimationClass('fade-in');
-    }, 500);
+    }, ANIMATION_DURATION);
   };
 
   const handleMusicDecline = () => {
@@ -28,7 +29,7 @@ function App() {
     setTimeout(() => {
       setMusicPrompt(false);
       setAnimationClass('fade-in');
-    }, 500);
+    }, ANIMATION_DURATION);
   };
 
   const handleVolumeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,7 +45,10 @@ function App() {
       audioRef.current.volume = volume;
     }
     if (musicEnabled && audioRef.current) {
-      audioRef.current.play().catch(() => {});
+      audioRef.current.play().catch((error) => {
+        console.warn('Autoplay failed:', error);
+        setMusicEnabled(false);
+      });
     } else if (audioRef.current) {
       audioRef.current.pause();
     }

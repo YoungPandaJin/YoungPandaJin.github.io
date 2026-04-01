@@ -3,6 +3,7 @@ import './Projects.scss';
 import projects, { Projects } from './ProjectsDatas';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { ANIMATION_DURATION } from '../../constants';
 
 const ProjectSection: React.FC = () => {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
@@ -14,7 +15,7 @@ const ProjectSection: React.FC = () => {
     setTimeout(() => {
       setCurrentProjectIndex(getNewIndex());
       setIsFading(false);
-    }, 500);
+    }, ANIMATION_DURATION);
   };
 
   const handleNextProject = () => {
@@ -55,13 +56,15 @@ const ProjectSection: React.FC = () => {
                 {currentProject.links && (
                   <div className="project-links">
                     {currentProject.links.map((link, index) => (
-                      <button
+                      <a
                         key={index}
-                        onClick={() => window.open(link.url, "_blank")}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="project-link-button"
                       >
                         {link.label}
-                      </button>
+                      </a>
                     ))}
                   </div>
                 )}
@@ -74,7 +77,7 @@ const ProjectSection: React.FC = () => {
             </div>
           </div>
           <div className="project-nav">
-            <button className="carousel-button" onClick={handlePrevProject}>
+            <button className="carousel-button" onClick={handlePrevProject} aria-label="Previous project">
               <FontAwesomeIcon icon={faChevronLeft} />
             </button>
             <div className="image-thumbnails">
@@ -82,13 +85,13 @@ const ProjectSection: React.FC = () => {
                 <img
                   key={index}
                   src={image}
-                  alt={`Thumbnail ${index + 1}`}
+                  alt={`${projects[index].title} thumbnail`}
                   className={index === currentProjectIndex ? 'selected' : ''}
                   onClick={() => handleImageClick(index)}
                 />
               ))}
             </div>
-            <button className="carousel-button" onClick={handleNextProject}>
+            <button className="carousel-button" onClick={handleNextProject} aria-label="Next project">
               <FontAwesomeIcon icon={faChevronRight} />
             </button>
           </div>

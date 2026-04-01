@@ -1,5 +1,7 @@
+@import '../../variables';
+
 .footer {
-  color: #fff;
+  color: $color-primary;
   padding: 20px;
   text-align: center;
   font-family: 'Arial', sans-serif;
@@ -12,7 +14,7 @@
     margin: 10px 0;
 
     a {
-      color: #fff;
+      color: $color-primary;
       margin: 0 10px;
       text-decoration: none;
       display: inline-flex;

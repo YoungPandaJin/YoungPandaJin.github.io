@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './MenuTab.scss';
 
-interface MenuTabProps {
-  activeSection: string;
-}
+const MenuTab: React.FC = () => {
+  const [activeSection, setActiveSection] = useState('hero-section');
 
-const MenuTab: React.FC<MenuTabProps> = ({ activeSection }) => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    const sections = document.querySelectorAll('header[id], section[id]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <nav className="menu-tab">
+    <nav className="menu-tab" aria-label="Page navigation">
       <ul>
         <li className={activeSection === 'hero-section' ? 'active' : ''}>
           <a href="#hero-section">Hero</a>

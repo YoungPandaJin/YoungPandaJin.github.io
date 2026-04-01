@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Hero from './Hero/Hero';
 import AboutMe from './AboutMe/AboutMe';
 import MenuTab from '../PageSetup/MenuTab';
@@ -15,35 +15,13 @@ const shootingStar = (
 );
 
 const Homepage: React.FC = () => {
-  const [activeSection, setActiveSection] = useState<string>('');
-
-  useEffect(() => {
-    const sections = document.querySelectorAll('section, header');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.6 }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
-    return () => {
-      sections.forEach((section) => observer.unobserve(section));
-    };
-  }, []);
-
   return (
     <div className="homepage">
       <div className="starry-background">
         {stars}
         {shootingStar}
       </div>
-      <MenuTab activeSection={activeSection} />
+      <MenuTab />
       <header id="hero-section" className="homepage-header">
         <Hero />
       </header>
