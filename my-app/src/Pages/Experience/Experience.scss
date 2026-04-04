@@ -24,6 +24,79 @@
   }
 }
 
+// Currently Working On
+.current-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.current-project-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  transition: border-color $transition-speed;
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.current-project-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85em;
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #4caf50;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.current-project-name {
+  font-size: 1.2em;
+  color: $color-primary;
+  margin: 0 0 8px;
+}
+
+.current-project-description {
+  color: $color-secondary;
+  font-size: 0.95em;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.current-project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: $color-muted;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8em;
+}
+
+// Timeline
 .timeline {
   position: relative;
   padding-left: 30px;
@@ -46,7 +119,7 @@
 
 .timeline-marker {
   position: absolute;
-  left: -26px;
+  left: -29px;
   top: 6px;
   width: 12px;
   height: 12px;
@@ -107,11 +180,13 @@
     font-size: 1.5em;
   }
 
-  .timeline-card {
+  .timeline-card,
+  .current-project-card {
     padding: 15px;
   }
 
-  .timeline-role {
+  .timeline-role,
+  .current-project-name {
     font-size: 1.1em;
   }
 }

@@ -28,11 +28,24 @@
 
 .shooting-star {
   position: absolute;
-  width: 8px;
-  height: 8px;
-  background: linear-gradient(45deg, white, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  width: 4px;
+  height: 4px;
+  background: white;
   border-radius: 50%;
-  animation: shooting-star 5s linear infinite;
+  box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.6);
+  animation: shooting-star 8s ease-in infinite;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: calc(100% - 2px);
+    right: 100%;
+    width: 150px;
+    height: 2px;
+    transform-origin: bottom right;
+    transform: rotate(15deg);
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.7), rgba(200, 220, 255, 0.3), rgba(255, 255, 255, 0));
+  }
 }
 
 @keyframes flicker {
@@ -47,10 +60,16 @@
 @keyframes shooting-star {
   0% {
     transform: translateX(0) translateY(0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  70% {
     opacity: 1;
   }
   100% {
-    transform: translateX(100vw) translateY(100vh);
+    transform: translateX(80vw) translateY(80vh);
     opacity: 0;
   }
 }
@@ -62,9 +81,13 @@
   }
 
   .shooting-star {
-    width: 6px;
-    height: 6px;
-    animation-duration: 4s;
+    width: 3px;
+    height: 3px;
+    animation-duration: 3.5s;
+
+    &::after {
+      width: 80px;
+    }
   }
 }
 
@@ -75,8 +98,12 @@
   }
 
   .shooting-star {
-    width: 5px;
-    height: 5px;
+    width: 2px;
+    height: 2px;
     animation-duration: 3s;
+
+    &::after {
+      width: 60px;
+    }
   }
 }

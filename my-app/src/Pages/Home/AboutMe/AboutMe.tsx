@@ -44,6 +44,17 @@ const AboutMe: React.FC = () => {
             </div>
           ))}
         </div>
+
+        <h3 className="about-me-subtitle">GitHub Activity</h3>
+        <div className="github-activity">
+          <a href="https://github.com/YoungPandaJin" target="_blank" rel="noopener noreferrer">
+            <img
+              src="https://ghchart.rshah.org/f13939/YoungPandaJin"
+              alt="YoungPandaJin's GitHub contribution chart"
+              className="github-chart"
+            />
+          </a>
+        </div>
       </div>
     </div>
   );

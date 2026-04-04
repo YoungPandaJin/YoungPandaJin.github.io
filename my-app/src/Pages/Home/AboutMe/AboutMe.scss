@@ -75,6 +75,22 @@
   }
 }
 
+.github-activity {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.github-chart {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
 @keyframes rainbow {
   0% { color: red; }
   14% { color: orange; }
