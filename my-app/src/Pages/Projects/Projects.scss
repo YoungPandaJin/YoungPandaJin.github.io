@@ -3,12 +3,10 @@
 
 .project {
   width: 80vw;
-  height: 85vh;
   margin: 5vh auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .project-title {
@@ -58,7 +56,7 @@
 }
 
 .project-info {
-  flex: 1 1 50%;
+  flex: 1 1 auto;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -228,21 +226,63 @@
 
 @import '../../styles/animations';
 
-.image-thumbnails {
-  justify-content: center;
+$color-status-active: #4caf50;
+
+.info-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8em;
+  color: $color-status-active;
+  border: 1px solid $color-status-active;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: $color-status-active;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.project-dots {
   display: flex;
   gap: 10px;
+  align-items: center;
+}
 
-  img {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    border-radius: 4px;
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid $color-muted;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color $transition-speed, border-color $transition-speed;
 
-    &.selected {
-      border-color: $color-accent;
-    }
+  &.active {
+    background-color: $color-accent;
+    border-color: $color-accent;
+  }
+
+  &:hover:not(.active) {
+    border-color: $color-primary;
   }
 }
 
@@ -306,4 +346,5 @@
   .carousel-button {
     font-size: 18px;
   }
+
 }

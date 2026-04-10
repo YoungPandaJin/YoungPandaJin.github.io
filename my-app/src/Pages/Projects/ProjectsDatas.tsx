@@ -1,11 +1,14 @@
 import Project1 from './Project1/Project.png';
 
+export type ProjectStatus = 'complete' | 'in-progress';
+
 export interface Project {
   title: string;
   description: string[];
   images: string[];
   links?: { label: string; url: string }[];
   technologies?: string[];
+  status?: ProjectStatus;
 }
 
 const projects: Project[] = [
@@ -22,6 +25,16 @@ const projects: Project[] = [
       { label: "Live Demo", url: "https://youngpandajin.github.io/" },
     ],
     technologies: ["React", "TypeScript", "SCSS"],
+  },
+  {
+    title: "Multiplayer Horror Game",
+    status: 'in-progress',
+    description: [
+      "Planning a cooperative multiplayer horror game with adaptive AI in Godot 4.",
+      "Currently in the learning and design phase.",
+    ],
+    images: [],
+    technologies: ["Godot 4", "GDScript"],
   },
 ];
 

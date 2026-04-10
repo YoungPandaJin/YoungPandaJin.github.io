@@ -15,12 +15,6 @@ interface EducationItem {
   details?: string[];
 }
 
-interface CurrentProject {
-  name: string;
-  description: string;
-  technologies: string[];
-}
-
 // Edit your experience here
 const experiences: ExperienceItem[] = [
   {
@@ -47,43 +41,10 @@ const education: EducationItem[] = [
   },
 ];
 
-// Edit what you're currently working on here
-const currentProjects: CurrentProject[] = [
-  {
-    name: 'Multiplayer Horror Game',
-    description: 'Planning a cooperative multiplayer horror game with adaptive AI in Godot 4. Currently in the learning and design phase.',
-    technologies: ['Godot 4', 'GDScript'],
-  },
-  {
-    name: 'Portfolio Website',
-    description: 'Continuously improving this site with new features and better design.',
-    technologies: ['React', 'TypeScript', 'SCSS'],
-  },
-];
-
 const Experience: React.FC = () => {
   return (
     <div className="experience">
       <div className="experience-content">
-        <h2 className="experience-title">Currently Working On</h2>
-        <div className="current-projects">
-          {currentProjects.map((project, index) => (
-            <div key={index} className="current-project-card">
-              <div className="current-project-status">
-                <span className="status-dot" />
-                In Progress
-              </div>
-              <h3 className="current-project-name">{project.name}</h3>
-              <p className="current-project-description">{project.description}</p>
-              <div className="current-project-tech">
-                {project.technologies.map((tech, i) => (
-                  <span key={i} className="tech-tag">{tech}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
         <h2 className="experience-title">Experience</h2>
         <div className="timeline">
           {experiences.map((exp, index) => (

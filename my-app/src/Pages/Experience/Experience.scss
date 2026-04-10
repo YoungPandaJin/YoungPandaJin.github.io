@@ -24,81 +24,6 @@
   }
 }
 
-// Currently Working On
-.current-projects {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding-left: 30px;
-}
-
-.current-project-card {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 20px;
-  transition: border-color $transition-speed;
-
-  &:hover {
-    border-color: rgba(255, 255, 255, 0.3);
-  }
-}
-
-$color-status-active: #4caf50;
-
-.current-project-status {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.85em;
-  color: $color-status-active;
-  margin-bottom: 10px;
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: $color-status-active;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.4;
-  }
-}
-
-.current-project-name {
-  font-size: 1.2em;
-  color: $color-primary;
-  margin: 0 0 8px;
-}
-
-.current-project-description {
-  color: $color-secondary;
-  font-size: 0.95em;
-  line-height: 1.5;
-  margin: 0 0 12px;
-}
-
-.current-project-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.tech-tag {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: $color-muted;
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 0.8em;
-}
-
 // Timeline
 .timeline {
   position: relative;
@@ -183,13 +108,11 @@ $color-status-active: #4caf50;
     font-size: 1.5em;
   }
 
-  .timeline-card,
-  .current-project-card {
+  .timeline-card {
     padding: 15px;
   }
 
-  .timeline-role,
-  .current-project-name {
+  .timeline-role {
     font-size: 1.1em;
   }
 }

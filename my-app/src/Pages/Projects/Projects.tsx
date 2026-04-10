@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Projects.scss';
-import projects, { Project } from './ProjectsDatas';
+import projects from './ProjectsDatas';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { ANIMATION_DURATION } from '../../shared/constants';
@@ -26,22 +26,25 @@ const ProjectSection: React.FC = () => {
     switchProject(() => (currentProjectIndex - 1 + projects.length) % projects.length);
   };
 
-  const handleImageClick = (index: number) => {
-    if (index === currentProjectIndex) return;
-    switchProject(() => index);
-  };
-
   const currentProject = projects[currentProjectIndex];
-  const projectsImages = projects.map((project: Project) => project.images[0]);
+  const hasMultipleProjects = projects.length > 1;
 
   return (
     <div className="project">
-      <h2 className="project-title">Project</h2>
+      <h2 className="project-title">Projects</h2>
       <div className="project-section">
         <div className="project-box">
           <div className="project-content">
             <div className={`project-info ${isFading ? 'fade-out' : 'fade-in'}`}>
-              <h2 className="info-title">{currentProject.title}</h2>
+              <div className="info-header">
+                <h2 className="info-title">{currentProject.title}</h2>
+                {currentProject.status === 'in-progress' && (
+                  <span className="status-badge">
+                    <span className="status-dot" />
+                    In Progress
+                  </span>
+                )}
+              </div>
               {currentProject.description.map((desc, index) => (
                 <p key={index} className="compact-description">{desc}</p>
               ))}
@@ -70,31 +73,36 @@ const ProjectSection: React.FC = () => {
                 )}
               </div>
             </div>
-            <div className={`project-image-side ${isFading ? 'fade-out' : ''}`}>
-              <div className="flip-card">
-                <img src={currentProject.images[0]} alt={`Project ${currentProjectIndex + 1}`} />
+            {currentProject.images.length > 0 && (
+              <div className={`project-image-side ${isFading ? 'fade-out' : ''}`}>
+                <div className="flip-card">
+                  <img src={currentProject.images[0]} alt={currentProject.title} />
+                </div>
               </div>
-            </div>
+            )}
           </div>
-          <div className="project-nav">
-            <button className="carousel-button" onClick={handlePrevProject} aria-label="Previous project">
-              <FontAwesomeIcon icon={faChevronLeft} />
-            </button>
-            <div className="image-thumbnails">
-              {projectsImages.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt={`${projects[index].title} thumbnail`}
-                  className={index === currentProjectIndex ? 'selected' : ''}
-                  onClick={() => handleImageClick(index)}
-                />
-              ))}
+          {hasMultipleProjects && (
+            <div className="project-nav">
+              <button className="carousel-button" onClick={handlePrevProject} aria-label="Previous project">
+                <FontAwesomeIcon icon={faChevronLeft} />
+              </button>
+              <div className="project-dots">
+                {projects.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`dot ${index === currentProjectIndex ? 'active' : ''}`}
+                    onClick={() => {
+                      if (index !== currentProjectIndex) switchProject(() => index);
+                    }}
+                    aria-label={`Go to project ${index + 1}`}
+                  />
+                ))}
+              </div>
+              <button className="carousel-button" onClick={handleNextProject} aria-label="Next project">
+                <FontAwesomeIcon icon={faChevronRight} />
+              </button>
             </div>
-            <button className="carousel-button" onClick={handleNextProject} aria-label="Next project">
-              <FontAwesomeIcon icon={faChevronRight} />
-            </button>
-          </div>
+          )}
         </div>
       </div>
     </div>
