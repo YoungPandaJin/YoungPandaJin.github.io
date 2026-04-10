@@ -25,4 +25,16 @@
   }
 }
 
+@media (max-width: 768px) {
+  .music-controls {
+    top: 5px;
+    right: 5px;
+    gap: 6px;
+
+    input[type="range"] {
+      width: 80px;
+    }
+  }
+}
+
 @import './styles/animations';

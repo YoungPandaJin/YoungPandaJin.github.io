@@ -32,7 +32,7 @@
 
 .project-box {
   background-color: transparent;
-  border: 2px solid white;
+  border: 2px solid $color-primary;
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -241,7 +241,7 @@
     border-radius: 4px;
 
     &.selected {
-      border-color: red;
+      border-color: $color-accent;
     }
   }
 }

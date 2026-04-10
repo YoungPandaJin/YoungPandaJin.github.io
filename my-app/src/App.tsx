@@ -45,8 +45,7 @@ function App() {
       audioRef.current.volume = volume;
     }
     if (musicEnabled && audioRef.current) {
-      audioRef.current.play().catch((error) => {
-        console.warn('Autoplay failed:', error);
+      audioRef.current.play().catch(() => {
         setMusicEnabled(false);
       });
     } else if (audioRef.current) {
@@ -60,24 +59,32 @@ function App() {
         <MusicPrompt onAccept={handleMusicAccept} onDecline={handleMusicDecline} />
       ) : (
         <>
-          <header className="App-header">
+          <main className="App-header">
             <Pages />
-          </header>
-          <div className="music-controls">
-            <Icon
-              icon={musicEnabled ? musicIcon : musicOffIcon}
+          </main>
+          <div className="music-controls" role="group" aria-label="Music controls">
+            <button
               onClick={() => setMusicEnabled(!musicEnabled)}
-              width="32"
-              height="32"
-              style={{ cursor: 'pointer', color: 'white' }}
-            />
+              aria-label={musicEnabled ? 'Mute background music' : 'Play background music'}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+            >
+              <Icon
+                icon={musicEnabled ? musicIcon : musicOffIcon}
+                width="32"
+                height="32"
+                style={{ color: 'white' }}
+              />
+            </button>
+            <label className="sr-only" htmlFor="volume-slider">Volume</label>
             <input
+              id="volume-slider"
               type="range"
               min="0"
               max="1"
               step="0.01"
               value={volume}
               onChange={handleVolumeChange}
+              aria-label="Volume"
             />
           </div>
           <audio ref={audioRef} src={BGM} loop />

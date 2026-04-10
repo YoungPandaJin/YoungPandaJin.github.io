@@ -26,9 +26,11 @@ const experiences: ExperienceItem[] = [
   {
     role: 'Software Engineer',
     company: 'FloQast',
-    period: '2024 December – Present',
+    period: 'December 2024 – Present',
     description: [
-      'Building and maintaining full-stack features for accounting workflow automation.',
+      'Built features for the Amortization/Depreciation application.',
+      'Led an epic as the driver across a team of 4 engineers, cross-collaborating with the JEM team.',
+      'Currently working on an AI-powered Journal Entry project.',
     ],
   },
 ];
@@ -39,16 +41,18 @@ const education: EducationItem[] = [
     degree: 'B.S. in Computer Science',
     school: 'Rose-Hulman Institute of Technology',
     period: '2020 – 2024',
-    details: [],
+    details: [
+      'Focused on software engineering and algorithms.',
+    ],
   },
 ];
 
 // Edit what you're currently working on here
 const currentProjects: CurrentProject[] = [
   {
-    name: 'AI "Friend"',
-    description: 'A sarcastic AI voice assistant that reacts to what you say using speech recognition and text-to-speech.',
-    technologies: ['Python', 'PyTorch', 'Speech Recognition'],
+    name: 'Multiplayer Horror Game',
+    description: 'Planning a cooperative multiplayer horror game with adaptive AI in Godot 4. Currently in the learning and design phase.',
+    technologies: ['Godot 4', 'GDScript'],
   },
   {
     name: 'Portfolio Website',

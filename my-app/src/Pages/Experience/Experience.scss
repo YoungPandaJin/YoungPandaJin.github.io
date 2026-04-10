@@ -29,6 +29,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding-left: 30px;
 }
 
 .current-project-card {
@@ -43,12 +44,14 @@
   }
 }
 
+$color-status-active: #4caf50;
+
 .current-project-status {
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 0.85em;
-  color: #4caf50;
+  color: $color-status-active;
   margin-bottom: 10px;
 }
 
@@ -56,7 +59,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #4caf50;
+  background-color: $color-status-active;
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -173,7 +176,7 @@
 
 @media (max-width: 768px) {
   .experience {
-    padding: 60px 15px 30px;
+    padding: 60px 15px 80px;
   }
 
   .experience-title {

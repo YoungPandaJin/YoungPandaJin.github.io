@@ -1,7 +1,6 @@
 import Project1 from './Project1/Project.png';
-import Project2 from './Project2/PandaJin.png';
 
-export interface Projects {
+export interface Project {
   title: string;
   description: string[];
   images: string[];
@@ -9,35 +8,20 @@ export interface Projects {
   technologies?: string[];
 }
 
-const projects: Projects[] = [
+const projects: Project[] = [
   {
     title: "Portfolio",
     description: [
-      "This is my portfolio website. I used React, TypeScript, and SCSS to build this website.",
-      "I used React Hooks to manage the state of the website.",
-      "I used TypeScript to write the code and SCSS to style the website.",
-      "This is where I am going to update my projects. Currently its done for now, but I might add more later"
+      "My personal portfolio built from scratch with React, TypeScript, and SCSS.",
+      "Features smooth page transitions, a starry animated background, background music with volume control, and a hidden easter egg.",
+      "Fully responsive and deployed to GitHub Pages.",
     ],
     images: [Project1],
     links: [
-      { label: "GitHub", url: "https://github.com/YoungPandaJin" },
-      { label: "Live Demo", url: "https://github.com/YoungPandaJin" },
+      { label: "GitHub", url: "https://github.com/YoungPandaJin/YoungPandaJin.github.io" },
+      { label: "Live Demo", url: "https://youngpandajin.github.io/" },
     ],
     technologies: ["React", "TypeScript", "SCSS"],
-  },
-  {
-    title: "Ai \"Friend\" (WIP)",
-    description: [
-      "This uses uses a python and pytorch to react sarcastically to what I speak. (Warning will interrupt you)",
-      "I used python to write the code andused speech recognition to get the audio from the user.",
-      "Then I get the response by using a dataset from huggingface and by converting the text to speech I can output it",
-    ],
-    images: [Project2],
-    links: [
-      { label: "GitHub", url: "https://github.com/YoungPandaJin" },
-      { label: "Live Demo", url: "https://github.com/YoungPandaJin" },
-    ],
-    technologies: ["Python", "Pytorch", "Speech Recognition"],
   },
 ];
 

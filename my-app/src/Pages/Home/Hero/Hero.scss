@@ -80,21 +80,11 @@
   z-index: 2;
 }
   
-.tarot-cards {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  gap: 10px;
-  z-index: 0;
-}
-
 @import '../../../styles/animations';
 
 @media (max-width: 768px) {
   .hero {
-    padding: 20px;
+    padding: 20px 20px 80px;
     height: auto;
   }
 
@@ -117,11 +107,6 @@
     font-size: 14px;
   }
   
-  .tarot-cards {
-    top: 50%;
-    transform: translate(-50%, -50%);
-    gap: 5px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -139,8 +124,4 @@
     width: 100%;
   }
 
-  .tarot-cards {
-    top: 55%;
-    gap: 3px;
-  }
 }

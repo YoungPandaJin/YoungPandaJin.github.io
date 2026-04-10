@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AboutMe.scss';
 
 interface Skill {
@@ -12,12 +12,18 @@ const skills: Skill[] = [
   { name: 'TypeScript', icon: 'devicon-typescript-plain' },
   { name: 'JavaScript', icon: 'devicon-javascript-plain' },
   { name: 'React', icon: 'devicon-react-original' },
+  { name: 'Node.js', icon: 'devicon-nodejs-plain' },
+  { name: 'HTML', icon: 'devicon-html5-plain' },
+  { name: 'CSS', icon: 'devicon-css3-plain' },
   { name: 'SCSS', icon: 'devicon-sass-original' },
+  { name: 'Java', icon: 'devicon-java-plain' },
   { name: 'Git', icon: 'devicon-git-plain' },
   { name: 'Godot', icon: 'devicon-godot-plain' },
 ];
 
 const AboutMe: React.FC = () => {
+  const [chartFailed, setChartFailed] = useState(false);
+
   return (
     <div className="about-me">
       <div className="about-me-content">
@@ -45,16 +51,21 @@ const AboutMe: React.FC = () => {
           ))}
         </div>
 
-        <h3 className="about-me-subtitle">GitHub Activity</h3>
-        <div className="github-activity">
-          <a href="https://github.com/YoungPandaJin" target="_blank" rel="noopener noreferrer">
-            <img
-              src="https://ghchart.rshah.org/f13939/YoungPandaJin"
-              alt="YoungPandaJin's GitHub contribution chart"
-              className="github-chart"
-            />
-          </a>
-        </div>
+        {!chartFailed && (
+          <>
+            <h3 className="about-me-subtitle">GitHub Activity</h3>
+            <div className="github-activity">
+              <a href="https://github.com/YoungPandaJin" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="https://ghchart.rshah.org/f13939/YoungPandaJin"
+                  alt="YoungPandaJin's GitHub contribution chart"
+                  className="github-chart"
+                  onError={() => setChartFailed(true)}
+                />
+              </a>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

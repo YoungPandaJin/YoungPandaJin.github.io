@@ -26,14 +26,34 @@
   animation-duration: 2.5s;
 }
 
+.shooting-star-wrapper {
+  position: fixed;
+  z-index: 50;
+  pointer-events: none;
+  animation: shooting-star 8s ease-in infinite;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 34px;
+    height: 34px;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+}
+
 .shooting-star {
-  position: absolute;
   width: 4px;
   height: 4px;
   background: white;
   border-radius: 50%;
   box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.6);
-  animation: shooting-star 8s ease-in infinite;
 
   &::after {
     content: '';

@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
 
   return (
     <div className="hero">
-      <img src="https://avatars.githubusercontent.com/u/122561920?v=4" alt="PandaJin" className="hero-image" />
+      <img src="https://avatars.githubusercontent.com/u/122561920?v=4" alt="Jinyoung Choi" className="hero-image" width="200" height="200" />
       <h1 className="hero-name">Jinyoung Choi</h1>
       <div className="hero-links">
         <a href="https://www.linkedin.com/in/jinyoung-choi-61aa181ba/" target="_blank" rel="noopener noreferrer" className="hero-button">
@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
         <a href="https://www.youtube.com/@ThePandaJin" target="_blank" rel="noopener noreferrer" className="hero-button">
           <FontAwesomeIcon icon={faYoutube} className="hero-icon" /> YouTube
         </a>
-        <a href="mailto:choij4@rose-hulman.edu" className="hero-button">
+        <a href="mailto:jchoi8163@gmail.com" className="hero-button">
           <FontAwesomeIcon icon={faEnvelopeSquare} className="hero-icon" /> Email
         </a>
         <button onClick={downloadResume} className="hero-button">

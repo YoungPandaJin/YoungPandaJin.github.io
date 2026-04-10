@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Projects.scss';
-import projects, { Projects } from './ProjectsDatas';
+import projects, { Project } from './ProjectsDatas';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { ANIMATION_DURATION } from '../../shared/constants';
@@ -32,7 +32,7 @@ const ProjectSection: React.FC = () => {
   };
 
   const currentProject = projects[currentProjectIndex];
-  const projectsImages = projects.map((project: Projects) => project.images[0]);
+  const projectsImages = projects.map((project: Project) => project.images[0]);
 
   return (
     <div className="project">

@@ -1,7 +1,7 @@
 import React from 'react';
 import './MenuTab.scss';
 
-export type Tab = 'home' | 'projects' | 'experience';
+export type Tab = 'home' | 'projects' | 'experience' | 'secret';
 
 interface MenuTabProps {
   activeTab: Tab;

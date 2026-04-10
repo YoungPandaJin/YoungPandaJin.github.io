@@ -43,3 +43,30 @@
   font-weight: bold;
   color: $color-accent;
 }
+
+@media (max-width: 768px) {
+  .menu-tab {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    padding: 8px 0;
+    background-color: rgba(0, 0, 0, 0.9);
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    li {
+      margin-bottom: 0;
+    }
+
+    li button {
+      font-size: 0.9em;
+      padding: 8px 12px;
+      text-align: center;
+    }
+  }
+}

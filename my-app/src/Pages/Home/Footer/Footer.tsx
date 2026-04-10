@@ -7,7 +7,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 const Footer: React.FC = () => {
   return (
     <footer className="footer">
-      <p>Website made by Jinyoung Choi</p>
+      <p>&copy; {new Date().getFullYear()} Jinyoung Choi. Built with React &amp; TypeScript.</p>
       <div className="footer-links">
         <a href="https://www.linkedin.com/in/jinyoung-choi-61aa181ba/" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
         <a href="https://github.com/YoungPandaJin" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faGithub} /> GitHub
         </a>
-        <a href="mailto:choij4@rose-hulman.edu">
+        <a href="mailto:jchoi8163@gmail.com">
           <FontAwesomeIcon icon={faEnvelope} /> Email
         </a>
       </div>
